@@ -1,0 +1,22 @@
+Jorge Hernandez
+
+9/30/24
+
+
+CHAPTER 4 Making Decisions
+-----------------------------
+
+4.1 Relational Operators
+-----------------------------
+
+- used to compare numbers to determine a order 
+    - can also be vars that hold value of nums
+    - very similar to math!!!
+
+    OPERATORS
+    ---------
+    > Greater Than
+    < Less Than
+    >= Greater Than or Equal
+
+

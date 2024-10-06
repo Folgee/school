@@ -1,0 +1,511 @@
+Jorge Hernandez 
+9/8/24
+
+2.1 Parts of a C++ Program
+---------------------------
+// sample C++ program  <-- comment 
+#include <iostream>    <-- preprocessor directive
+using namespace std;   <-- which namespace to use
+
+int main()             <-- beginng of function name
+{
+    cout << "Hello, World";  <-- output statement
+    return 0;                <-- return 0 to program
+
+}                            <-- end of block for main
+
+
+--SPECIAL CHARACTERS--
+
+// beggining of comment
+#  start of preprocessor directive
+<> enclose fileanme in #include
+() used for naming a funciton
+{} encloses group statements
+"" encloses string characters
+;  end of programming statement
+
+---------------------------
+
+
+2.2 cout Object
+--------------------------
+
+cout = displays output to computer screen
+
+ex.
+    cout << "Programming is fun!";
+
+
+- can be used to send more than one item to cout
+    ex.2
+        cout << "Hello " << "there!";
+
+
+endl Manipulator
+endl = outputs new line in cout output
+
+    ex. cout << "Programming is" << endl;
+        cout << "Fun";
+
+        OUTPUT
+        Programming is 
+        Fun
+
+\n ESCAPE SEQUENCE
+\n = starts a new line in the output (similar to endl)
+
+    ex. cout << "Programming is \n";
+        cout << "fun!";
+
+        OUTPUT 
+        Programming is fun!
+---------------------------
+
+
+2.3 #include Directive
+---------------------------
+
+#include = inserts contents of another file into the program
+
+    - is a preprocessor directive
+    - dont use ';' at the end of line
+
+---------------------------
+
+
+2.4 Variables and Literals
+---------------------------
+
+variable = a storage location in memeory
+
+    - has name and data type (what it can hold)
+    - define before you can use it
+
+    ex.
+        int item;
+        item = 5;
+
+    *WHEN YOU OUTPUT item THE CODE 5 WILL SHOW 5
+
+
+literals = value that is written into programs code
+
+    ex. 
+        "hello, there" (string literal)
+        12 (integer literal)
+
+    
+    ex 2. (integer literal)
+        int apples;
+        apples = 5; <-- this is a interger literal
+
+-----------------------------
+
+
+2.5 Identifires
+-----------------------------
+
+identifire = a defined name for some part of a program
+    ex. variables functions etc..
+
+    - they are defined by programmer
+
+
+
+variable names = represents the purpose of the var
+
+    ex.
+        itemsOrdered
+
+        - itemsOrdered var holds the number of 
+          items ordered
+
+RULES!!!
+    1. first character of identifire must be a letter only!!
+    
+    2. only use letters, numbers or underscore!
+
+    ex. 
+        
+        totalSales   Valid 
+        total_Sales  Valid
+        total.Sales  INVALID
+        5thQtSales   INVALID 
+
+-----------------------------
+
+2.6 Integer Data Types
+-----------------------------
+
+-very Similar to math 
+
+- they hold numbers such as 12, -900, 5 
+
+- DO NOT USE DECIMALS!
+
+    keywords
+
+        - int 
+        - long it 
+        - short int
+        
+
+
+* Defining Variables
+
+ - varibales of the same dataype can be defined 
+ on the same line, rather being seperate lines 
+
+ 
+    ex. (same line)
+        int length, width;
+        unsignend int area;
+
+    ex. (seperate lines)
+        int lenth;
+        int width;
+        unsigned int area;
+
+ - var of different data types must be in diffrent lines
+
+
+********EX CODE 
+ // code of everything put in practice
+
+    include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        int checking;
+        unsigned in miles;
+        long diameter;
+
+        checking = -20;    <-- interger literal
+        miles = 4276;      <-- int literal
+        diameter = 100000; <-- int literal
+        
+        cout << "We have made a long journey of  " << miles;
+        cout << "miles .\n"
+        cout << "Our checking account balance is " << checking;
+        cout << "\nThe galaxy is about " << diameter;
+        cout << "light years in diameter. \n";
+        return 0;
+
+
+    }
+
+
+- going back to int literals, in the code above
+  checking, miles, diameter are given int literals by programmer
+  and they are then store in memeory locations.
+
+-----------------------------
+
+
+2.7 char Data Type
+-----------------------------
+
+- char = hold letters when assigned to vars
+
+       * Breakdown!
+            - hold characters as small integer values
+                (1 byte of memeory)
+
+                - numeric value of character form the charater 
+                set is store in memeory 
+
+                    ex.
+                         CODE
+                         char letter;
+                         letter = 'C';
+
+                        MEMORY LOCATION
+                        letter
+                        67
+
+- chars must be enclosed in single quotes marks
+    ex. 'A' or 'a'
+        
+        REMINDER --> 'A' and 'a' will output differently 
+                     
+
+- character strings - 
+
+   - series of characters in consecutive memeory locations
+        
+        ex. 
+            "Hello"
+
+   - stored with null terminator \0 at the end
+
+   - comprised of the characters between the " "
+        
+        ex. 
+            Hello \0
+
+        
+-----------------------------
+
+
+2.8 c++ string class
+-----------------------------
+
+    -Classes are required when using stings
+        ex. 
+            #include <string>
+
+    - You can define string vars in programs.
+        ex. 
+            string firstName, lastName;
+
+        - You can assign values to strings
+            ex. 
+                firstName = "Jorge";
+                lastName = "Hernandez";
+
+        - You can display them as well 
+            ex. 
+                cout << firstName << " " << lastName;
+
+EX CODE 
+
+    // This program demonstrates the string class. 
+    #include <iostream>
+    #include <string>
+    using namespace std;
+
+    int main()
+    {
+        string movieTitle;
+
+        movieTitle = "Wheels of Fury";
+        cout << "My favorite is " << movieTitle << endl;
+        return 0;
+
+    }
+
+-----------------------------
+
+
+2.9 Floating point Data Types
+-----------------------------
+
+ - Floating-point data types are
+    
+    ex.
+        float 
+        double
+        long double
+
+- numbers that are held 
+    ex. 
+        23.34
+        -3.8
+
+
+EX CODE
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        float distance;
+        double mass;
+
+        distance = 1.48897998;
+        mass = 1.9873;
+        cout << "Then sun is " << distance << "meters away.\n";
+        cout << "The Sun\ 's mass is " << mass << " kilograms.\n";
+        return 0;
+
+
+
+    }
+
+-----------------------------
+
+
+2.10 bool Data Type
+-----------------------------
+
+ - Bool data type = hold values that are TRUE or FALSE
+
+ - bool vars are stored as small integers
+
+ - FALSE is 0 and TRUE is 1
+
+    ex. 
+        bool allDone = true;
+
+        bool finished = false;
+
+
+EX CODE 
+    
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+    
+        bool boolValue;
+
+        boolValue = true;
+        cout << boolValue << endl;
+        boolValue = false;
+        cout << boolValue << endl;
+        return 0;
+
+    }
+
+-----------------------------
+
+2.13 Scoope
+-----------------------------
+
+- scope = part of program where var can be accessed
+
+    - happens when you try to uses a var before its ever 
+        been defined.
+
+-----------------------------
+
+
+2.14 Arithmetic Operators
+-----------------------------
+
+ - Is used for mathematical calculations
+
+    + addition 
+
+    - subtraction
+
+    * multiplication
+
+    / division
+
+    % modulus
+
+
+
+-----------------------------
+
+
+2.15 Comments
+
+ - use // to comment code 
+
+    - tell purpose of program 
+
+    - describe the use of variables
+
+    - explain complex sections of code
+
+
+    ex. 
+        // this code will preform basic Algebraic 
+        // operations, can use with decimals.
+
+
+    ex2. 
+        /* 
+            this code will preform basic Algebraic 
+            operations, can use with decimals.
+        */
+
+-----------------------------
+
+
+2.16 Named CONSTANTS
+-----------------------------
+
+ - constant variable = var that can't be changed durring
+   program execution.
+
+ - constant vars should always be used in UPPERCASE LETTERS
+
+    ex. 
+        const double TAX_RATE = 0.0648;
+        conts int NUM_STATES = 50;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

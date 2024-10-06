@@ -1,0 +1,338 @@
+Jorge Hernandez
+9/19/24
+
+3.1 The cin object
+-----------------------------
+ - standard input object 
+ - REQUIRES "iostream" file!!! does not work without
+ - reads inpuit from the keyboard (when prompting user to input info)
+    - info is retrived using "cin >>" 
+
+EX. 
+    // porgram ask user to enter info (length and width)
+    // calculates the area and displays the answer
+
+    #include <iostream>
+    using namespace std;
+
+    int main()
+    {
+        //vars will be declared
+        int length, width, area;
+
+        //
+        cout << "This program calculates the area of a ";
+        cout << "rectangle. \n";
+        cout << "What is the length of the rectangle? ";
+        
+        //now input from the user is entered
+        cin >> length;
+
+        cout << "what is the width of the recatangle";
+        cin >> width;
+
+        //computation is done here
+        area = length * width;
+        
+        //outputting the the information
+
+        cout << "The area of the rectangle is " << area << ".\n";
+        return 0;
+    
+    }
+
+
+- always use a prompt to message the user to enter data.
+
+    -cout comes before cin when prompting!!!
+
+
+- you can input more than one value:
+    "cin >> height >> width";   <--- REMINDER THAT PROGRAMMING USING LOGIC, SO 
+                                     STEPS MUST BE IN ORDER TO FUFILL NEEDS 
+                                     WHEN ENTER DATA.
+
+-----------------------------
+
+3.2 Math Expressions
+----------------------------- 
+
+- you can create complex expressions using multiple mathematical operators
+
+- expressions can be literals, vars, or combinations of constants and vars
+
+EX.     
+    area = 2 * PI * radius;
+    cout << "border is: " << 2*(1 + w);
+
+
+--ORDER OF OPERATIONS--
+
+- expressions with more than oner operator evaluate in order 
+    (unary negation), in order, left to right
+    
+    * / %, in order from left to right, similar to math (PEMDAS)
+    + -, in order from left to right
+
+    2 + 2 * 2 - 2
+     
+
+    ex.
+
+    5 + 2 * 4 = 13
+    10 / 2 - 3 = 2
+    8 + 12 * 2 - 4 = 28
+    4 + 17 % 2 - 1 =  28
+
+
+- parantheses () can be used to overide the order of operations
+
+    ex.
+        2 + 2 * 2 - 2 = 4 
+        (2+2) * 2 - 2 = 6
+        2 + 2 * (2-2) = 2
+        (2+2) * (2-2) = 0
+
+    ex2.
+        (5+2) * 4 = 28
+        10/(5-3)  = 5
+        
+--ALEGBRAIC EXPRESSIONS--
+
+- when multiplying, you need an operator
+
+    ex.
+        Area = lw,
+         must be written as! 
+        "area = l*w;" <--- notice how you use the multillcation operator
+
+- theres no exponent operator
+
+    ex.
+        area = s^2 
+         must be written as 
+        "area = pow(s, 2);"
+
+- use paranethese to main order of operations
+
+    ex. 
+        m = y2 - y1
+            -------
+            x2 - x1
+
+        must be written as
+        
+        m = (y2-y1) / (x2 - x1);
+        
+USE YOUR OPERATORS CORRECTLY!!!
+
+-----------------------------
+
+3.3 mixing operations and operands of the same type
+-----------------------------
+
+- operations are done betweene operands of the same type
+    - if not the same type, they will be converted to the same type
+    - can impact results of calculations
+    
+
+--HIERACHY OF TYPES--
+
+    long double 
+    double 
+    float 
+    unsigned long
+    long 
+    unsigned int
+    int
+
+    *^ranked by the largest number they can hold
+
+--TYPE COERCION--
+
+- type coercion = automatic conversion of operand to
+                  another data type
+
+- promotion = convert to a higher type
+
+- demotion = conver to lower type
+
+--RULES!
+
+    1. "char", "short", "unsigned", "short" are all 
+       automatically promoted to "int".
+    
+    2. when coercion occurs, lower one is promoted to the 
+       type of the higher one.
+
+    3. when using "=", the type of the expression on the right
+       will be converted to the type of var on the left.
+
+-----------------------------
+
+3.4 Overflow and Underflow
+-----------------------------
+
+- Overflow = when assigning a value that is too large to be held in a var 
+
+- Underflow = when assigning a value that is to small to be held in a var
+
+-----------------------------
+
+3.5 Type Casting
+----------------------------
+
+- Type Casting = used for manual data type conversion.
+    - usefull for float point divion using ints
+
+    - it grabs small numbers and pretends to make them bigger
+      for that given moment in time
+
+        ex.
+            double m;
+            m = static_cast<double>(y2-y1) / (x2-x1);
+
+    - usefull to see "int" value of a "char" var
+        
+        ex.
+            char ch = 'C';
+            cout << ch << " is " << static_cast<int>(ch);
+            
+
+    ex CODE.
+
+        #include <iostream>
+        using namespace std;
+
+        int main()
+        {
+            
+            int books;
+            int months;
+            double perMonth;
+
+            cout << "How many books do you plan to read? ";
+            cin >> books;
+            cout << "How man months will it take you to read them? ";
+            cin >> months;
+
+            perMonth = static_cast<double>(books) / months;
+            cout << "That is " << perMonth << "books per month. \n";
+            
+            return 0;
+
+NOT FINISHED WITH THIS SECTION!!!!!!!
+-----------------------------
+
+3.6 Multi assignment and combined assignment
+
+-----------------------------
+
+- can be used "=" to assign a value to multiple vars
+    ex.
+        x = y = z = 5;
+        
+        (logic)
+        - x, y, z are all equal to 5.
+
+        - this was all done in single line of code;
+
+--COMBINED ASSIGNMENT--
+
+- sum = sum + 1;
+    
+    - 1 is added the var sum (sum may have a given value at this point)
+
+    ex.
+        x = x + 4;
+        x = x - 3;
+        x = x * 10;
+        x = x / 4;
+
+- combined assignment is a short hand method to the previous statements;
+    ex.
+        sum = sum + 1;
+        sum += 1;
+
+        +=
+        -=
+        /=
+        *=
+        %=
+
+-----------------------------
+
+3.7 FORMATING OUTPUT
+-----------------------------
+
+- allows you to control the output displays for numbers and string data:
+    size
+    position (number of spaces out or far left/far right)
+    number of digit being displayed 
+
+    #include <iomanip>
+
+--STREAM MANIPUILATORS--
+
+- make it easier for presenting data for input and output.
+
+- setw(x), prints 'x' spaces wide.
+
+    ex.
+        cout << setw(6) << num1 << setw(6) << num2 << setw(6) << num3;
+        
+        this output vars and leave 6 spaces appart from each!
+
+
+- fixed = uses decimal noation for floating point values
+    - setprecision(x) prints how many didgits you want "x" after the decimal
+        
+        ex. if you set it to 3
+        num2 = 4.85692
+        cout << setprecision(3) << num2;
+
+        output: 4.856
+
+    - showpoint = forces to display all the decilams and the zeros that come after
+
+    
+
+    "cout << fixed << setprecision << showpoint"
+
+----------------------------- 
+
+3.8 working with chars and string objects
+-----------------------------
+
+- 'cin' can be a issue when wanting to enter strings, so instead use 'getline'  
+
+- use 'getline' to bypass issues regarding whitespaces, tabs and line breaks.
+
+    ex. 
+        string name;
+        string city;
+
+        cout << "Please enter your name: ";
+        getline(cin, name);
+        cout << "Enter the city you live in: ";
+        getline(cin, city);
+
+
+--WORKING WITH CHARS AND STRING OBJECTS--
+
+- Reading a single char
+    - use cin 
+
+    ex.     
+        char ch;
+        cout << "Strike any key to continue";
+        cin >> ch;
+
+        //here the problem will skip over blanks and tabs or ctrl
+
+    - instead use cin.get();
+        
+        ex.     
+            cin.get(ch);
+            //this reads the next character entered even white spaces
+
